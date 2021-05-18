@@ -28,8 +28,8 @@ var app = new Vue({
 
         indietro: function () {
             this.picsIndex --;
-            if (this.picsIndex <= -1) {
-                this.pickIndex = (this.pics.length - 1);
+            if (this.picsIndex < 0) {
+                this.pickIndex == (this.pics.length - 1);
             }
         },
     }
