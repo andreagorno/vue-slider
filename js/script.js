@@ -7,6 +7,7 @@
 var app = new Vue({
     el: "#root",
     data: {
+        
         pics: [
             "https://i1.wp.com/www.basketuniverso.it/wp-content/uploads/2020/02/https___cdn.cnn_.com_cnnnext_dam_assets_200126144225-06-kobe-bryant-lead-image.jpg?w=1200&ssl=1",
             "https://www.nbareligion.com/wp-content/uploads/2021/03/lebron-3-e1615544242915.jpg",
@@ -20,16 +21,16 @@ var app = new Vue({
     
     methods: {
         avanti: function () {
-            this.picsIndex ++;
+            this.picsIndex++;
             if (this.picsIndex > (this.pics.length - 1)) {
                 this.picsIndex = 0;
             }
         },
 
         indietro: function () {
-            this.picsIndex --;
+            this.picsIndex--;
             if (this.picsIndex < 0) {
-                this.pickIndex == (this.pics.length - 1);
+                this.picsIndex = (this.pics.length - 1);
             }
         },
     }

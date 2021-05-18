@@ -19,6 +19,11 @@
             </div>
             <div id="slider">
                 <img v-bind:src="pics[picsIndex]">
+                <div class="slider-box">
+                    <i v-for="(pic, index) in pics" :class="(index == picsIndex) ? 'active' : ''" class="fas fa-circle">
+                        <!-- {{ index }} -->
+                    </i>
+                </div>
             </div>
             <div id="chevron-right">
                 <i @click="avanti" class="fas fa-chevron-right"></i>
