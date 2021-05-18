@@ -57,9 +57,24 @@
     margin: 5px;
     color: white;
     font-size: 15px;
+    cursor: pointer;
 }
 
 .slider-box i.active {
     color: yellow;
     font-size: 20px;
+}
+
+#top {
+    /* width: 600px;
+    height: 100px; */
+    /* background-color: lime; */
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#top h1 {
+    font-size: 60px;
 }

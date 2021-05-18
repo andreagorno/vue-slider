@@ -16,23 +16,37 @@ var app = new Vue({
             "https://www.aics.it/wp-content/uploads/2020/02/barkley.jpg",
             "https://images.everyeye.it/img-notizie/magic-johnson-campione-nba-protagonista-film-imprese-sportive-v3-451389-1280x960.jpg"
         ],
-        picsIndex: 0, 
+        picsIndex: 0,
+        playerName: [
+            "Kobe Bryant",
+            "LeBron James",
+            "Kevin Durant",
+            "Michael Jordan",
+            "Charles Barkley",
+            "Magic Johnson",
+        ],
+        nameIndex: 0,
     },
     
     methods: {
         avanti: function () {
             this.picsIndex++;
-            if (this.picsIndex > (this.pics.length - 1)) {
+            this.nameIndex++;
+            if (this.picsIndex > (this.pics.length - 1) && this.nameIndex > (this.playerName.length - 1)) {
                 this.picsIndex = 0;
+                this.nameIndex = 0;
             }
         },
 
         indietro: function () {
             this.picsIndex--;
-            if (this.picsIndex < 0) {
+            this.nameIndex--;
+            if (this.picsIndex < 0 && this.nameIndex < 0) {
                 this.picsIndex = (this.pics.length - 1);
+                this.nameIndex = (this.playerName.length - 1);
             }
         },
+
     }
 
 });
