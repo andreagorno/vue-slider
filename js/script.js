@@ -47,6 +47,18 @@ var app = new Vue({
             }
         },
 
-    }
+        goToImage: function (newIndex) {
+            console.log("goToImage", newIndex);
+            this.picsIndex = newIndex;
+            this.nameIndex = newIndex;
+        }
+    },
+    created: function () {
+        console.log("Ho creato l'istanza Vue");
+        var vm = this;
 
+        setInterval(function() {
+            vm.avanti();
+        }, 3000);
+    }
 });
