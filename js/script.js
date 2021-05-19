@@ -26,9 +26,14 @@ var app = new Vue({
             "Magic Johnson",
         ],
         nameIndex: 0,
+        autoPlay: "",
     },
     
     methods: {
+        clickAvanti: function() {
+            clearInterval(this.autoPlay);
+            this.avanti();
+        },
         avanti: function () {
             this.picsIndex++;
             this.nameIndex++;
@@ -38,6 +43,7 @@ var app = new Vue({
             }
         },
 
+        
         indietro: function () {
             this.picsIndex--;
             this.nameIndex--;
@@ -49,6 +55,7 @@ var app = new Vue({
 
         goToImage: function (newIndex) {
             console.log("goToImage", newIndex);
+            clearInterval(this.autoPlay)
             this.picsIndex = newIndex;
             this.nameIndex = newIndex;
         }
@@ -57,7 +64,7 @@ var app = new Vue({
         console.log("Ho creato l'istanza Vue");
         var vm = this;
 
-        setInterval(function() {
+        this.autoPlay = setInterval(function() {
             vm.avanti();
         }, 3000);
     }
